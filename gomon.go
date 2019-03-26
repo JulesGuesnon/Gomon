@@ -12,7 +12,7 @@ import (
 
 func main()  {
 	if len(os.Args) < 2 {
-		log.Fatal("Wtf les amis pas de fichier")
+		log.Fatal("Please provide a file to watch")
 	}
 
 	path := os.Args[1]
@@ -78,11 +78,19 @@ func runCmd(path string, first bool) (pgid int) {
 	cmd.Start()
 
 	if first {
-		fmt.Println("Starting")
+		formatPrint("Starting to watch")
 	} else {
-		fmt.Println("Restarting due to change")
+		formatPrint("Restarting due to change")
 	}
 	id, _ := syscall.Getpgid(cmd.Process.Pid)
 
 	return id
+}
+
+func formatPrint(msg string)  {
+	fmt.Println("")
+	fmt.Println("\x1b[36m*")
+	fmt.Println("  " + msg)
+	fmt.Println("*\x1b[0m")
+	fmt.Println("")
 }
