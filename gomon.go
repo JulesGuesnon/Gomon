@@ -1,4 +1,4 @@
-package gomon
+package main
 
 import (
 	"os"
