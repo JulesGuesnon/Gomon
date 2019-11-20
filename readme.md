@@ -1,17 +1,12 @@
 # Gomon
 
   
-This package aim to reproduce [nodemon](https://github.com/remy/nodemon) for go
+This package aim to reproduce the behavior of [nodemon](https://github.com/remy/nodemon) for go.
+I made this for training purpose so it's probably not really usable.
 
 ## Installation guide
 
-First get the package
-
-```
-go get github.com/julesguesnon/gomon
-```
-
-Install it
+Install the package
 ```
 go install github.com/julesguesnon/gomon
 ```
